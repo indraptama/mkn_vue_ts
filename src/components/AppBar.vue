@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar flat dark fixed color="teal" style="z-index: 5">
+    <v-toolbar app flat dark fixed color="teal" style="z-index: 5">
       <v-toolbar-side-icon @click.stop="leftMenuClick()" />
       <v-toolbar-title>{{ $route.name }}</v-toolbar-title>
       <v-spacer />
@@ -11,7 +11,7 @@
         <v-icon>apps</v-icon>
       </v-btn>
 
-      <v-menu nudge-width="100" nudge-bottom="16">
+      <v-menu :nudge-width="100" :nudge-bottom="48">
         <template v-slot:activator="{ on }">
           <div class="ml-2" v-on="on">
             <v-avatar size="32">
@@ -52,14 +52,19 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
+import { AppMenu } from "../plugins/AppMenu";
+
 @Component({})
 export default class AppBar extends Vue {
   // data
-  menuLeftStatus = "closed";
+  menuLeftClicked = true;
   profileMenu = ["All", "Family", "Friends", "Coworkers"];
 
   leftMenuClick() {
-    console.log(this.menuLeftStatus);
+    // this.menuLeftClicked = !this.menuLeftClicked;
+    // AppMenu.$emit("menuLeftisClick", this.menuLeftClicked);
+    // console.log(this.menuLeftClicked);
+    this.$store.dispatch("updateSideBar");
   }
 }
 </script>

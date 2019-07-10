@@ -4,7 +4,7 @@
     <v-content class="pt-5">
       <v-layout fill-height>
         <v-flex shrink>
-          <v-navigation-drawer :mini-variant.sync="mini"></v-navigation-drawer>
+          <SideBar />
         </v-flex>
         <v-flex>
           <router-view />
@@ -17,22 +17,15 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import AppBar from "@/components/AppBar.vue";
+import SideBar from "@/components/SideBar.vue";
 
 @Component({
   components: {
-    AppBar
+    AppBar,
+    SideBar
   }
 })
-export default class App extends Vue {
-  // state
-  mini = true;
-  drawer = true;
-  right = null;
-  items = [
-    { title: "Home", icon: "dashboard" },
-    { title: "About", icon: "question_answer" }
-  ];
-}
+export default class App extends Vue {}
 </script>
 
 <style></style>
