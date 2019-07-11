@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar app flat dark fixed color="teal" style="z-index: 5">
+    <v-toolbar app fixed flat clipped-left dark color="pink" style="z-index: 5">
       <v-toolbar-side-icon @click.stop="leftMenuClick()" />
       <v-toolbar-title>{{ $route.name }}</v-toolbar-title>
       <v-spacer />
@@ -61,10 +61,10 @@ export default class AppBar extends Vue {
   profileMenu = ["All", "Family", "Friends", "Coworkers"];
 
   leftMenuClick() {
-    // this.menuLeftClicked = !this.menuLeftClicked;
-    // AppMenu.$emit("menuLeftisClick", this.menuLeftClicked);
+    this.menuLeftClicked = !this.menuLeftClicked;
+    AppMenu.$emit("menuLeftisClick");
     // console.log(this.menuLeftClicked);
-    this.$store.dispatch("updateSideBar");
+    // this.$store.dispatch("updateSideBar");
   }
 }
 </script>

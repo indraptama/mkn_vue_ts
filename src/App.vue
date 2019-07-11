@@ -1,16 +1,11 @@
 <template>
   <v-app>
     <AppBar />
-    <v-layout fill-height>
-      <v-flex shrink class="pt-5">
-        <SideBar />
-      </v-flex>
-      <v-flex>
-        <v-content style="padding-top: 64px">
-          <router-view />
-        </v-content>
-      </v-flex>
-    </v-layout>
+
+    <SideBar />
+    <v-content style="padding-top: 64px">
+      <router-view />
+    </v-content>
   </v-app>
 </template>
 
