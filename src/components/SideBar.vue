@@ -6,7 +6,12 @@
     stateless
   >
     <v-list class="mt-4">
-      <v-list-tile v-for="item in menuItems" :key="item.id" @click.stop>
+      <v-list-tile
+        v-for="item in menuItems"
+        :key="item.id"
+        @click.stop
+        :to="item.link"
+      >
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-tile-action>
@@ -42,8 +47,8 @@ export default class SideBar extends Vue {
   drawer = true;
   right = null;
   menuItems = [
-    { title: "Dashboard", icon: "dashboard" },
-    { title: "Notaris", icon: "question_answer" },
+    { title: "Dashboard", icon: "dashboard", link: "/" },
+    { title: "Notaris", icon: "question_answer", link: "/about" },
     { title: "PPAT", icon: "question_answer" },
     { title: "Tanda Terima", icon: "question_answer" },
     { title: "Kwitansi", icon: "question_answer" }
