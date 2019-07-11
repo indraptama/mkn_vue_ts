@@ -42,7 +42,7 @@ export default class SideBar extends Vue {
     },
     { title: "PPAT", icon: "public" },
     { title: "Tanda Terima", icon: "cached" },
-    { title: "Kwitansi", icon: "moneyr" }
+    { title: "Akunting", icon: "money" }
   ];
   menuNotaris = {
     title: "Notaris",

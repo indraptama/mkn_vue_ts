@@ -1,7 +1,39 @@
 <template>
-  <v-container class="home">
+  <div>
+    <div class="blue-grey lighten-5">
+      <v-container class="home">
+        <h1 class="display-1 font-weight-light">Quick Start</h1>
+        <v-layout wrap>
+          <v-flex xs12 md6 lg3 pa-2>
+            <v-card>
+              <v-card-title>Klien</v-card-title>
+              <v-card-text>Add New Client</v-card-text>
+              <v-divider />
+              <v-card-actions right>
+                <v-btn depressed color="primary">add new client</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+          <v-flex xs12 md6 lg3 pa-2>
+            <v-card>
+              <v-card-title></v-card-title>
+            </v-card>
+          </v-flex>
+          <v-flex xs12 md6 lg3 pa-2>
+            <v-card>
+              <v-card-title></v-card-title>
+            </v-card>
+          </v-flex>
+          <v-flex xs12 md6 lg3 pa-2>
+            <v-card>
+              <v-card-title></v-card-title>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
     <HelloWorld />
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">
