@@ -3,8 +3,18 @@
     v-model="drawer"
     :mini-variant.sync="menuStatus"
     hide-overlay
+    stateless
   >
-    <div class="mt-5">{{ testProps }}</div>
+    <v-list class="mt-4">
+      <v-list-tile v-for="item in menuItems" :key="item.id" @click.stop>
+        <v-list-tile-action>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
   </v-navigation-drawer>
 </template>
 
@@ -31,9 +41,12 @@ export default class SideBar extends Vue {
   mini = false;
   drawer = true;
   right = null;
-  items = [
-    { title: "Home", icon: "dashboard" },
-    { title: "About", icon: "question_answer" }
+  menuItems = [
+    { title: "Dashboard", icon: "dashboard" },
+    { title: "Notaris", icon: "question_answer" },
+    { title: "PPAT", icon: "question_answer" },
+    { title: "Tanda Terima", icon: "question_answer" },
+    { title: "Kwitansi", icon: "question_answer" }
   ];
 
   mounted() {
@@ -43,6 +56,7 @@ export default class SideBar extends Vue {
   }
 
   get menuStatus() {
+    this.mini = this.$store.state.appSideBarStatus;
     return this.$store.state.appSideBarStatus;
   }
 }
