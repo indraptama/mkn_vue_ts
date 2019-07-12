@@ -1,6 +1,6 @@
 <template>
-  <v-navigation-drawer v-model="drawer" clipped stateless fixed app>
-    <v-list>
+  <v-navigation-drawer v-model="drawer" width="256" clipped stateless fixed app>
+    <v-list dense>
       <!--  -->
       <SideBarMenu :listMenu="menuItems[0]" />
       <SideBarMenu :listMenu="menuItems[1]" />

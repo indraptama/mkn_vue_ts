@@ -2,34 +2,23 @@
   <div>
     <div class="blue-grey lighten-5">
       <v-container class="home">
-        <h1 class="display-1 font-weight-light">Quick Start</h1>
-        <v-layout wrap>
-          <v-flex xs12 md6 lg3 pa-2>
-            <v-card>
-              <v-card-title>Klien</v-card-title>
-              <v-card-text>Add New Client</v-card-text>
-              <v-divider />
-              <v-card-actions right>
-                <v-btn depressed color="primary">add new client</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 md6 lg3 pa-2>
-            <v-card>
-              <v-card-title></v-card-title>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 md6 lg3 pa-2>
-            <v-card>
-              <v-card-title></v-card-title>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 md6 lg3 pa-2>
-            <v-card>
-              <v-card-title></v-card-title>
-            </v-card>
-          </v-flex>
-        </v-layout>
+        <h1 class="subheading font-weight-bold">Quick Start</h1>
+        <v-container fluid pa-0 grid-list-md>
+          <v-layout row wrap justify-start>
+            <template v-for="item in quickStart">
+              <v-flex shrink :key="item.id">
+                <v-card width="256" height="200" :color="item.color" dark hover>
+                  <v-img height="100" :src="item.img"></v-img>
+                  <v-card-text>
+                    <span class="title font-weight-medium">{{
+                      item.title
+                    }}</span>
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+            </template>
+          </v-layout>
+        </v-container>
       </v-container>
     </div>
     <HelloWorld />
@@ -45,5 +34,28 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
     HelloWorld
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  quickStart = [
+    {
+      title: "Add New Client",
+      img: "/img/route-img/client.png",
+      link: "/notaris",
+      color: "primary"
+    },
+    {
+      title: "Add Akta Notaris",
+      img: "/img/route-img/storage.png",
+      link: "/notaris",
+      color: "red"
+    },
+    {
+      title: "Add New Akta PPAT",
+      img: "/img/route-img/hosting.png",
+      link: "/notaris",
+      color: "teal"
+    },
+    { title: "Add New Client", img: "/aa.jpg", link: "/notaris" },
+    { title: "Add New Client", img: "/aa.jpg", link: "/notaris" }
+  ];
+}
 </script>
