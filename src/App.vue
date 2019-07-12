@@ -23,4 +23,8 @@ import SideBar from "@/components/SideBar.vue";
 export default class App extends Vue {}
 </script>
 
-<style></style>
+<style>
+.title {
+  font-family: "nunito" !important;
+}
+</style>
