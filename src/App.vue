@@ -25,6 +25,6 @@ export default class App extends Vue {}
 
 <style>
 .title {
-  font-family: "nunito" !important;
+  font-family: "Montserrat" !important;
 }
 </style>
