@@ -1,6 +1,14 @@
 <template>
   <div>
-    <v-toolbar app fixed flat clipped-left dark color="pink" style="z-index: 5">
+    <v-toolbar
+      app
+      fixed
+      flat
+      clipped-left
+      dark
+      color="primary"
+      style="z-index: 5"
+    >
       <v-toolbar-side-icon @click.stop="leftMenuClick()" />
       <v-toolbar-title>{{ $route.name }}</v-toolbar-title>
       <v-spacer />

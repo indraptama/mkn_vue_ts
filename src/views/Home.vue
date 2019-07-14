@@ -1,17 +1,18 @@
 <template>
   <div>
+    <!-- Quick Start -->
     <div class="blue-grey lighten-5">
-      <v-container class="home">
-        <h1 class="subheading font-weight-bold mb-3">Quick Start</h1>
-        <v-container fluid pa-0 grid-list-md>
-          <v-layout row wrap justify-start>
-            <template v-for="item in quickStart">
-              <v-flex xs12 md6 lg3 :key="item.id">
-                <CardQuickStart :linkList="item" />
-              </v-flex>
-            </template>
-          </v-layout>
-        </v-container>
+      <v-container pb-0 mb-0>
+        <h1 class="display-1 font-weight-thin">Quick Start</h1>
+      </v-container>
+      <v-container grid-list-md>
+        <v-layout row wrap justify-start>
+          <template v-for="item in quickStart">
+            <v-flex xs12 md6 lg3 :key="item.id">
+              <CardQuickStart :linkList="item" />
+            </v-flex>
+          </template>
+        </v-layout>
       </v-container>
     </div>
   </div>
@@ -30,24 +31,29 @@ import CardQuickStart from "@/components/CardQuickStart.vue";
 export default class Home extends Vue {
   quickStart = [
     {
-      title: "Add New Client",
+      title: "Daftar Client Baru",
       img: "/img/route-img/client.png",
-      link: "/notaris",
+      link: "/client",
       color: "primary"
     },
     {
-      title: "Create Akta Notaris",
-      img: "/img/route-img/storage.png",
+      title: "Membuat Akta Notaris",
+      img: "/img/route-img/notaris.png",
       link: "/notaris",
       color: "teal"
     },
     {
-      title: "Create Akta PPAT",
-      img: "/img/route-img/hosting.png",
+      title: "Membuat Akta PPAT",
+      img: "/img/route-img/ppat.png",
       link: "/notaris",
       color: "primary"
     },
-    { title: "Add New Client", img: "/aa.jpg", link: "/notaris" }
+    {
+      title: "Membuat Tanda Terima",
+      img: "/img/route-img/folder.png",
+      link: "/notaris",
+      color: "primary"
+    }
   ];
 }
 </script>

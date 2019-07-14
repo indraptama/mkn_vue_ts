@@ -34,7 +34,7 @@ export default class SideBar extends Vue {
   right = null;
   menuItems = [
     { title: "Dashboard", icon: "dashboard", link: "/" },
-    { title: "Klien", icon: "account_box", link: "/about" },
+    { title: "Klien", icon: "account_box", link: "/client" },
     {
       title: "Notaris",
       icon: "book",
@@ -88,7 +88,7 @@ export default class SideBar extends Vue {
         link: "/"
       },
       {
-        title: "Daftar Sertifikat",
+        title: "Status Pekerjaan",
         icon: "book",
         link: "/"
       },

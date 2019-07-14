@@ -3,7 +3,7 @@
     <AppBar />
 
     <SideBar />
-    <v-content style="padding-top: 64px">
+    <v-content class="blue-grey lighten-5">
       <router-view />
     </v-content>
   </v-app>
@@ -23,8 +23,4 @@ import SideBar from "@/components/SideBar.vue";
 export default class App extends Vue {}
 </script>
 
-<style>
-.title {
-  font-family: "Montserrat" !important;
-}
-</style>
+<style></style>

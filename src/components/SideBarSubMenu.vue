@@ -10,14 +10,11 @@
         </v-list-tile-content>
       </v-list-tile>
     </template>
-    <v-list-tile
-      to="listMenu.link"
-      v-for="item in listMenu.submenu"
-      :key="item.id"
-      @click.stop
-    >
-      <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-    </v-list-tile>
+    <template v-for="item in listMenu.submenu">
+      <v-list-tile :to="item.link" :key="item.id" @click.stop>
+        <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+      </v-list-tile>
+    </template>
   </v-list-group>
 </template>
 
