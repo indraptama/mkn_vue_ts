@@ -18,6 +18,10 @@
             : SortByName_All.length + " klien"
         }}
       </h6>
+      <v-spacer />
+      <v-btn color="primary" small depressed>
+        <v-icon left>add</v-icon>Add New Client
+      </v-btn>
     </v-toolbar>
     <v-divider />
 
@@ -34,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import _ from "lodash";
 
 import ClientBoxList from "@/components/ClientBoxList.vue";
@@ -55,6 +59,9 @@ import ClientBoxList from "@/components/ClientBoxList.vue";
   }
 })
 export default class ClientBox extends Vue {
+  @Prop({ default: [] })
+  peopleData: Object[];
+
   tabs = null;
   searchBox = "";
 
