@@ -20,9 +20,10 @@
         <v-toolbar flat dense class="pl-4 pr-4">
           <h5>Profile Lengkap</h5>
         </v-toolbar>
+        <v-divider />
 
         <div class="pt-3 pb-3">
-          <template v-for="(item,i) in test">
+          <template v-for="(item,i) in clientProfile">
             <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2" :key="i">
               <v-flex xs4>
                 <span class="caption font-weight-medium text--white">{{item.title}}</span>
@@ -58,7 +59,7 @@ const AppProps = Vue.extend({
 
 @Component({})
 export default class ProfileCard extends AppProps {
-  get test() {
+  get clientProfile() {
     return [
       {
         title: "Nomor Induk Kependudukan",
@@ -76,6 +77,37 @@ export default class ProfileCard extends AppProps {
         title: "Jenis Kelamin",
         value: this.propKTP.genders
       },
+      {
+        title: "Alamat Lengkap",
+        value:
+          this.propKTP.address.street +
+          ", " +
+          this.propKTP.address.rt +
+          ", " +
+          this.propKTP.address.rw +
+          ", " +
+          this.propKTP.address.kelurahan +
+          ", " +
+          this.propKTP.address.kecamatan +
+          ", " +
+          this.propKTP.address.city
+      },
+      {
+        title: "Status Perkawinan",
+        value: this.propKTP.martialStatus
+      },
+      {
+        title: "Pekerjaan",
+        value: this.propKTP.job
+      },
+      {
+        title: "No. Telephone",
+        value: this.propKTP.phone
+      },
+      {
+        title: "email",
+        value: this.propKTP.email
+      }
     ];
   }
 }

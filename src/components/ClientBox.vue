@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import _ from "lodash";
+import _, { Object } from "lodash";
 
 import ClientBoxList from "@/components/ClientBoxList.vue";
 
@@ -55,6 +55,7 @@ export default class ClientBox extends AppProps {
   tabs = null;
   searchBox = "";
 
+  // computed
   get SortByName_All() {
     let sort = _.chain(this.peopleData)
       .concat(this.orgData)

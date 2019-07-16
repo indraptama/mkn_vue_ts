@@ -41,11 +41,16 @@ export default class Client extends Vue {
       })
       .catch(err => console.log(err));
 
-    axios
-      .get("http://localhost:3000/company")
-      .then(res => {
-        this.orgData = res.data;
-      })
+    // axios
+    //   .get("http://localhost:3000/company")
+    //   .then(res => {
+    //     this.orgData = res.data;
+    //   })
+    //   .catch(err => console.log(err));
+
+    fetch("http://localhost:3000/company")
+      .then(res => res.json())
+      .then(result => (this.orgData = result))
       .catch(err => console.log(err));
   }
 
