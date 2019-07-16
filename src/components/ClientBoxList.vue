@@ -30,7 +30,11 @@ import { Component, Vue } from "vue-property-decorator";
     }
   }
 })
-export default class ClientBoxList extends Vue {}
+export default class ClientBoxList extends Vue {
+  getID(nik: String) {
+    this.$store.dispatch("updateActiveContact", nik);
+  }
+}
 </script>
 
 <style></style>

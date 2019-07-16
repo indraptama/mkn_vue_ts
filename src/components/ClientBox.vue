@@ -39,29 +39,24 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import _ from "lodash";
+import _, { Object } from "lodash";
 
 import ClientBoxList from "@/components/ClientBoxList.vue";
+
+const AppProps = Vue.extend({
+  props: {
+    peopleData: Array,
+    orgData: Array
+  }
+});
 
 @Component({
   components: {
     ClientBoxList
-  },
-  props: {
-    peopleData: {
-      type: Array,
-      default: []
-    },
-    orgData: {
-      type: Array,
-      default: []
-    }
   }
 })
-export default class ClientBox extends Vue {
-  @Prop({ default: [] })
-  peopleData: Object[];
-
+export default class ClientBox extends AppProps {
+  [x: string]: any;
   tabs = null;
   searchBox = "";
 
