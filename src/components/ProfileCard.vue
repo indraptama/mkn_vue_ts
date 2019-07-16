@@ -22,90 +22,16 @@
         </v-toolbar>
 
         <div class="pt-3 pb-3">
-          <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2">
-            <v-flex xs4>
-              <span class="caption font-weight-medium text--white"
-                >Nomor Induk Penduduk</span
-              >
-            </v-flex>
-            <v-flex xs8>
-              <span class="body-1">{{ propKTP.nik }}</span>
-            </v-flex>
-          </v-layout>
-          <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2">
-            <v-flex xs4>
-              <span class="caption font-weight-medium text--white"
-                >Nama Lengkap</span
-              >
-            </v-flex>
-            <v-flex xs8>
-              <span class="body-1">{{ propKTP.fullName }}</span>
-            </v-flex>
-          </v-layout>
-          <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2">
-            <v-flex xs4>
-              <span class="caption font-weight-medium text--white"
-                >Tempat / Tanggal Lahir</span
-              >
-            </v-flex>
-            <v-flex xs8>
-              <span class="body-1">{{
-                propKTP.birthPlace + ", " + propKTP.birthDate
-              }}</span>
-            </v-flex>
-          </v-layout>
-          <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2">
-            <v-flex xs4>
-              <span class="caption font-weight-medium text--white"
-                >Jenis Kelamin</span
-              >
-            </v-flex>
-            <v-flex xs8>
-              <span class="body-1">{{ propKTP.genders }}</span>
-            </v-flex>
-          </v-layout>
-          <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2">
-            <v-flex xs4>
-              <span class="caption font-weight-medium text--white"
-                >Alamat Lengkap</span
-              >
-            </v-flex>
-            <v-flex xs8>
-              <span class="body-1">
-                {{
-                  propKTP.address.street +
-                    " RT." +
-                    propKTP.address.rt +
-                    " RW." +
-                    propKTP.address.rw +
-                    " Kelurahan/Desa " +
-                    propKTP.address.kelurahan +
-                    " Kecamatan " +
-                    propKTP.address.kecamatan +
-                    " " +
-                    propKTP.address.city
-                }}
-              </span>
-            </v-flex>
-          </v-layout>
-          <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2">
-            <v-flex xs4>
-              <span class="caption font-weight-medium text--white"
-                >No.Telepone</span
-              >
-            </v-flex>
-            <v-flex xs8>
-              <span class="body-1">{{ propKTP.phone }}</span>
-            </v-flex>
-          </v-layout>
-          <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2">
-            <v-flex xs4>
-              <span class="caption font-weight-medium text--white">Email</span>
-            </v-flex>
-            <v-flex xs8>
-              <span class="body-1">{{ propKTP.email }}</span>
-            </v-flex>
-          </v-layout>
+          <template v-for="(item,i) in test">
+            <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2" :key="i">
+              <v-flex xs4>
+                <span class="caption font-weight-medium text--white">{{item.title}}</span>
+              </v-flex>
+              <v-flex xs8>
+                <span class="body-1">{{ item.value }}</span>
+              </v-flex>
+            </v-layout>
+          </template>
         </div>
       </v-flex>
 
@@ -131,5 +57,26 @@ const AppProps = Vue.extend({
 });
 
 @Component({})
-export default class ProfileCard extends AppProps {}
+export default class ProfileCard extends AppProps {
+  get test() {
+    return [
+      {
+        title: "Nomor Induk Kependudukan",
+        value: this.propKTP.nik
+      },
+      {
+        title: "Nama Lengkap",
+        value: this.propKTP.fullName
+      },
+      {
+        title: "Tempat Tanggal Lahir",
+        value: this.propKTP.birthPlace + ", " + this.propKTP.birthPlace
+      },
+      {
+        title: "Jenis Kelamin",
+        value: this.propKTP.genders
+      },
+    ];
+  }
+}
 </script>
