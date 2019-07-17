@@ -2,7 +2,7 @@
   <v-card max-width="960">
     <v-layout fill-height>
       <!-- Left -->
-      <v-flex xs8>
+      <v-flex xs6>
         <v-layout align-center pa-5>
           <v-card width="96" height="96">
             <v-img :src="propKTP.avatar" />
@@ -17,18 +17,20 @@
           </div>
         </v-layout>
         <v-divider />
-        <v-toolbar flat dense class="pl-4 pr-4">
+        <v-toolbar flat dense class="pl-4 pr-4" color="white">
           <h5>Profile Lengkap</h5>
         </v-toolbar>
         <v-divider />
 
         <div class="pt-3 pb-3">
-          <template v-for="(item,i) in clientProfile">
+          <template v-for="(item, i) in clientProfile">
             <v-layout align-baseline class="pl-5 pr-5 pt-2 pb-2" :key="i">
               <v-flex xs4>
-                <span class="caption font-weight-medium text--white">{{item.title}}</span>
+                <span class="caption font-weight-medium text--white">{{
+                  item.title
+                }}</span>
               </v-flex>
-              <v-flex xs8>
+              <v-flex xs8 class="pl-2">
                 <span class="body-1">{{ item.value }}</span>
               </v-flex>
             </v-layout>
@@ -37,7 +39,7 @@
       </v-flex>
 
       <!-- Right -->
-      <v-flex xs4 class="bl grey lighten-4">
+      <v-flex xs6 class="bl grey lighten-4">
         <div class="pa-5 white">
           <h4>History</h4>
         </div>
@@ -49,7 +51,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
 
 const AppProps = Vue.extend({
   props: {

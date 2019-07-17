@@ -13,9 +13,9 @@
     <v-toolbar dense flat>
       <h6 class="subheading">
         {{
-        SortByName_All.length == 0
-        ? "Nama tidak ditemukan"
-        : SortByName_All.length + " klien"
+          SortByName_All.length == 0
+            ? "Nama tidak ditemukan"
+            : SortByName_All.length + " klien"
         }}
       </h6>
       <v-spacer />
@@ -27,14 +27,19 @@
 
     <v-list two-line dense>
       <template v-for="contact in SortByName_All">
-        <ClientBoxList :key="contact._id" :fullName="contact.fullName" :nik="contact.nik" />
+        <ClientBoxList
+          :key="contact._id"
+          :fullName="contact.fullName"
+          :nik="contact.nik"
+        />
       </template>
     </v-list>
   </v-sheet>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
+import { Component, Prop } from "vue-property-decorator";
 import _, { Object } from "lodash";
 
 import ClientBoxList from "@/components/ClientBoxList.vue";
@@ -52,6 +57,9 @@ const AppProps = Vue.extend({
   }
 })
 export default class ClientBox extends AppProps {
+  // @Prop() peopleData: {}[];
+  // @Prop() orgData: {}[];
+
   tabs = null;
   searchBox = "";
 
