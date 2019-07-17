@@ -62,16 +62,20 @@
                 </v-list-tile-action>
                 <v-list-tile-content>
                   <v-list-tile-title>{{ item.fullName }}</v-list-tile-title>
-                  <v-list-tile-sub-title class="text-primary">{{
+                  <v-list-tile-sub-title class="text-primary">
+                    {{
                     item.nik
-                  }}</v-list-tile-sub-title>
+                    }}
+                  </v-list-tile-sub-title>
                 </v-list-tile-content>
               </v-layout>
             </v-flex>
             <v-flex xs3 class="body-1">{{ item.phone }}</v-flex>
-            <v-flex xs3 class="body-1">{{
+            <v-flex xs3 class="body-1">
+              {{
               item.address.kecamatan + ", " + item.address.city
-            }}</v-flex>
+              }}
+            </v-flex>
             <v-flex xs2 class="body-1">{{ item.phone }}</v-flex>
           </v-layout>
         </v-list-tile>
@@ -88,7 +92,7 @@ import _ from "lodash";
 @Component({})
 export default class Client extends Vue {
   ripple = false;
-  clientData = [];
+  clientData: Object[] = [];
 
   mounted() {
     axios.get("http://localhost:3000/people").then(res => {

@@ -6,9 +6,9 @@
 
     <v-flex grow>
       <!-- Profile Card -->
-      <v-container justify-center>
+      <div justify-center>
         <ProfileCard :propKTP="selectedContact" />
-      </v-container>
+      </div>
     </v-flex>
   </v-layout>
 </template>
