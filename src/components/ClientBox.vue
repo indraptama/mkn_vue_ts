@@ -1,5 +1,5 @@
 <template>
-  <v-sheet width="320" color="white">
+  <v-sheet color="white">
     <div class="pa-3 grey lighten-4">
       <v-text-field
         prepend-inner-icon="search"
@@ -10,19 +10,6 @@
       />
     </div>
 
-    <v-toolbar dense flat>
-      <h6 class="subheading">
-        {{
-          SortByName_All.length == 0
-            ? "Nama tidak ditemukan"
-            : SortByName_All.length + " klien"
-        }}
-      </h6>
-      <v-spacer />
-      <v-btn color="primary" small depressed>
-        <v-icon left>add</v-icon>Add New Client
-      </v-btn>
-    </v-toolbar>
     <v-divider />
 
     <v-list two-line dense>
@@ -94,3 +81,18 @@ export default class ClientBox extends AppProps {
 </script>
 
 <style></style>
+
+//
+<v-toolbar dense flat>
+//       <h6 class="subheading">
+//         {{
+//           SortByName_All.length == 0
+//             ? "Nama tidak ditemukan"
+//             : SortByName_All.length + " klien"
+//         }}
+//       </h6>
+//       <v-spacer />
+//       <v-btn color="primary" small depressed icon>
+//         <v-icon>add</v-icon>
+//       </v-btn>
+//     </v-toolbar>

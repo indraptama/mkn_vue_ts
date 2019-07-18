@@ -1,20 +1,16 @@
 <template>
-  <v-container justify-center>
-    <v-card max-width="1396" class="mx-auto">
-      <v-layout fill-height>
-        <v-flex xs4 shrink color="white" min-height="100vh">
-          <ClientBox :peopleData="personData" :orgData="orgData" />
-        </v-flex>
+  <v-layout fill-height>
+    <v-flex shrink color="white" min-height="100vh">
+      <ClientBox :peopleData="personData" :orgData="orgData" />
+    </v-flex>
 
-        <v-flex xs8 grow class="bl grey lighten-3">
-          <!-- Profile Card -->
-          <div justify-center>
-            <ProfileCard :propKTP="selectedContact" />
-          </div>
-        </v-flex>
-      </v-layout>
-    </v-card>
-  </v-container>
+    <v-flex grow>
+      <!-- Profile Card -->
+      <div justify-center>
+        <ProfileCard :propKTP="selectedContact" />
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script lang="ts">
@@ -67,12 +63,8 @@ export default class Client extends Vue {
 }
 </script>
 
-<style scoped>
+<style scouped>
 .bl {
   border-left: 1px solid rgba(0, 0, 0, 0.12);
-}
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 </style>
