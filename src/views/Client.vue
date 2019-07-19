@@ -1,20 +1,29 @@
 <template>
-  <v-container justify-center>
-    <v-card max-width="1396" class="mx-auto">
-      <v-layout fill-height>
-        <v-flex xs4 shrink color="white" min-height="100vh">
-          <ClientBox :peopleData="personData" :orgData="orgData" />
-        </v-flex>
+  <div>
+    <v-toolbar flat color="primary"></v-toolbar>
+    <div style="max-width: 1140px; margin-top: -64px" class="mx-auto">
+      <v-card max-width="1396" class="mx-auto">
+        <v-layout fill-height>
+          <v-flex xs4 shrink color="white" min-height="100vh">
+            <ClientBox :peopleData="personData" :orgData="orgData" />
+          </v-flex>
 
-        <v-flex xs8 grow class="bl grey lighten-3">
-          <!-- Profile Card -->
-          <div justify-center>
-            <ProfileCard :propKTP="selectedContact" />
-          </div>
-        </v-flex>
-      </v-layout>
-    </v-card>
-  </v-container>
+          <v-flex xs8 grow class="bl grey lighten-3">
+            <!-- Profile Card -->
+            <v-toolbar flat></v-toolbar>
+            <v-divider />
+            <div style="height: calc(100vh - 140px)">
+              <vue-scroll>
+                <v-container>
+                  <ProfileCard :propKTP="selectedContact" />
+                </v-container>
+              </vue-scroll>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-card>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">

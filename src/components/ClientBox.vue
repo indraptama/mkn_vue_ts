@@ -1,26 +1,31 @@
 <template>
   <v-sheet color="white">
-    <div class="pa-3 grey lighten-4">
+    <v-toolbar flat color="grey lighten-4">
       <v-text-field
         prepend-inner-icon="search"
         placeholder="Cari Klien"
         hide-details
         solo
+        flat
         v-model="searchBox"
       />
-    </div>
+    </v-toolbar>
 
     <v-divider />
 
-    <v-list two-line dense>
-      <template v-for="contact in SortByName_All">
-        <ClientBoxList
-          :key="contact._id"
-          :fullName="contact.fullName"
-          :nik="contact.nik"
-        />
-      </template>
-    </v-list>
+    <div style="height: calc(100vh - 140px)">
+      <vue-scroll>
+        <v-list two-line dense>
+          <template v-for="contact in SortByName_All">
+            <ClientBoxList
+              :key="contact._id"
+              :fullName="contact.fullName"
+              :nik="contact.nik"
+            />
+          </template>
+        </v-list>
+      </vue-scroll>
+    </div>
   </v-sheet>
 </template>
 

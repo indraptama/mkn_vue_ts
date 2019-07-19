@@ -1,6 +1,6 @@
 <template>
   <div style="border-left: 1px solid rgba(0,0,0,.1)">
-    <v-card max-width="512" flat>
+    <v-card flat>
       <v-layout fill-height column>
         <!-- Left -->
         <v-flex xs12>
@@ -25,12 +25,15 @@
 
           <div class="pt-3 pb-3">
             <template v-for="(item, i) in clientProfile">
-              <v-layout column align-baseline class="pl-5 pr-5 pt-2 pb-2" :key="i">
+              <v-layout
+                column
+                align-baseline
+                class="pl-5 pr-5 pt-2 pb-2"
+                :key="i"
+              >
                 <v-flex xs4>
                   <span class="caption font-weight-medium text--white">
-                    {{
-                    item.title
-                    }}
+                    {{ item.title }}
                   </span>
                 </v-flex>
                 <v-flex xs8 class>
